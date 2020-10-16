@@ -1,1 +1,93 @@
-<p>home works!</p>
+<div class="body">
+  <div class="container">
+    <div>
+      <h3>Add Hotel</h3>
+      <input
+        type="text"
+        [(ngModel)]="newHotel.id"
+        class="input"
+        placeholder="Hotel Id"
+      />
+      <input
+        type="text"
+        [(ngModel)]="newHotel.name"
+        class="input"
+        placeholder="Name"
+      />
+    </div>
+    <div>
+      <input
+        type="text"
+        [(ngModel)]="newHotel.rating"
+        class="input"
+        placeholder="Rating"
+      />
+    </div>
+    <div>
+      <input
+        type="text"
+        [(ngModel)]="newHotel.photoUrl"
+        class="input"
+        placeholder="Hotel Image"
+      />
+    </div>
+    <div>
+      <input
+        type="text"
+        [(ngModel)]="newHotel.spaciality"
+        class="input"
+        placeholder="Specailality of Hotel"
+      />
+
+      <input
+        type="text"
+        [(ngModel)]="newHotel.address"
+        class="input"
+        placeholder="Address of Hotel"
+      />
+
+      <input
+        type="text"
+        [(ngModel)]="newHotel.phone"
+        class="input"
+        placeholder="Phone No"
+      />
+
+      <input
+        type="text"
+        [(ngModel)]="newHotel.link"
+        class="input"
+        placeholder="Visit Hotel"
+      />
+      <button (click)="addHotel(newHotel)" class="btn">Add Hotel</button>
+    </div>
+  </div>
+
+  <ul class="list">
+    <li *ngFor="let hotel of hotels">
+      <div class="img">
+        <img
+          src="{{ hotel.photoUrl }}"
+          alt="Imagen de {{ hotel.name }}"
+          class="center"
+        />
+      </div>
+      <h3>{{ hotel.name }}</h3>
+      <p>{{ hotel.rating }}</p>
+      <p>{{ hotel.address }}</p>
+      <button class="btn">Get Location</button>
+    </li>
+  </ul>
+  <div class="container">
+    <div>
+      Remove Hotel
+      <input
+        type="text"
+        [(ngModel)]="id"
+        class="input"
+        placeholder="Hotel Id"
+      />
+      <button (click)="removeHotel(id)" class="btn">Add Hotel</button>
+    </div>
+  </div>
+</div>
